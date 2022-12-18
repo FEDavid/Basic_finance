@@ -3,7 +3,7 @@ import sqlite3
 from sqlite3 import Error
 
 # Variables
-database = r".\DB\py_DB.db"
+database = r"py_DB.db"
 payments_list = []
 
 # Classes
@@ -54,6 +54,7 @@ def create_table(conn, sql_create_tblPayments):
     try:
         c = conn.cursor()
         c.execute(sql_create_tblPayments)
+        print("New DB created.")
     except Error as e:
         print(e)
 
@@ -166,20 +167,3 @@ if __name__ == '__main__':
     create_connection(database)
     create_tbls()
     user_menu()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
